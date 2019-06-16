@@ -5,19 +5,24 @@ module.exports = {
     return res.render('login.html');
   },
   async post(req, res) {
-    const {email, password} = req.body;
-    if (!email || !password) {
-      return res.render('login.html', {error: true, form: {email, password}});
+    try {
+      const {email, password} = req.body;
+      if (!email || !password) {
+        return res.render('login.html', {error: true, form: {email, password}});
+      }
+
+      const sessionId = await auth.createSession(email, password);
+
+      if (!sessionId) {
+        return res.render('login.html', {error: true, form: {email, password}});
+      }
+
+      req.session.sessionId = sessionId;
+
+      return res.redirect('/dashboard');
+    } catch (e) {
+      console.error(`POST /login >> Error: ${e.stack}`)
+      return res.status(500).render('500.html', { message: e.toString() })
     }
-
-    const sessionId = await auth.createSession(email, password);
-
-    if (!sessionId) {
-      return res.render('login.html', {error: true, form: {email, password}});
-    }
-
-    req.session.sessionId = sessionId;
-
-    return res.redirect('/dashboard');
   }
 };
