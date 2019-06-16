@@ -26,7 +26,8 @@
           name="email"
           type="email"
           required
-          placeholder="email@example.com">
+          placeholder="email@example.com"
+          value="{{ form.email }}">
       </div>
       <div class="mb-6">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
@@ -39,6 +40,7 @@
           type="password"
           required
           placeholder="******************"
+          value="{{ form.password }}"
           >
       </div>
       <div class="flex items-center justify-between">

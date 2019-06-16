@@ -7,14 +7,16 @@ module.exports = {
   async post(req, res) {
     const {email, password} = req.body;
     if (!email || !password) {
-      return res.render('login.html', {error: true});
+      return res.render('login.html', {error: true, form: {email, password}});
     }
 
     const sessionId = await auth.createSession(email, password);
 
     if (!sessionId) {
-      return res.render('login.html', {error: true});
+      return res.render('login.html', {error: true, form: {email, password}});
     }
+
+    req.session.sessionId = sessionId;
 
     return res.redirect('/dashboard');
   }
