@@ -29,5 +29,6 @@ Global concerns like security, cookie parsing, body parsing and request logging 
 
 This application loosely follows the [Presentation Domain Data Layering](https://www.martinfowler.com/bliki/PresentationDomainDataLayering.html):
 
-- Data Presentation is dealt with in the `./src/pages` folder
+- Presentation is dealt with in the `./src/pages` folder
 - Domain is dealt with in the `./src/modules` folder.
+- Persistence is dealt with in the `./src/persistence` folder.
