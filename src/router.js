@@ -5,6 +5,6 @@ const router = new Router();
 
 router.get('/', pages.home);
 router.get('/about', pages.about);
-router.get('/login', pages.login);
+router.get('/dashboard', pages.dashboard);
 
 module.exports = router;
