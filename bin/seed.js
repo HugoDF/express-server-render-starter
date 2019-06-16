@@ -1,8 +1,7 @@
-const bcrypt = require('bcrypt');
-const User = require('../src/persistence/users');
+const User = require('../src/modules/users');
 
 async function run() {
-  await User.create('hugo@boss.com', await bcrypt.hash('password', 10));
+  await User.create('hugo@boss.com', 'password');
   console.log('Added users');
 }
 
