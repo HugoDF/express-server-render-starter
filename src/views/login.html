@@ -1,20 +1,55 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<section class="w-full mx-auto mt-10 pt-10 container">
-  <div class="bg-white shadow-md rounded px-8 pt-6 mb-4">
-    <a class="mb-8 inline-block text-xs" href="/">&larr; Back</a>
-    <p class="text-md inline-block">
-      To complete this step you'll be redirected to <a href="{{ pocketUrl }}">https://getpocket.com/auth/authorize</a> and will need to click "Authorise"
-    </p>
-    <div class="py-12 block">
-      <a
-        href="{{ pocketUrl }}"
-        class="bg-red hover:bg-red-dark text-white font-bold py-3 px-8 rounded focus:outline-none focus:shadow-outline"
-      >
-        Go
-      </a>
+<section class="w-full mx-auto mt-10 container">
+  {% if error %}
+  <div class="max-w-md mx-auto">
+    <div class="bg-red-100  border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
+      <p class="font-bold">Error</p>
+      <p class="text-sm">Could not find user with email/password. Please try again</p>
     </div>
+  </div>
+  {% endif %}
+  <div class="w-full mt-10 max-w-xs mx-auto">
+    <form
+      action="/login"
+      method="post"
+      class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      >
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+          Email
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder="email@example.com">
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+          Password
+        </label>
+        <input
+          class="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          id="password"
+          name="password"
+          type="password"
+          required
+          placeholder="******************"
+          >
+      </div>
+      <div class="flex items-center justify-between">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+          >
+          Sign In
+        </buttonclass="bg-blue-500>
+      </div>
+    </formclass="bg-white>
   </div>
 </section>
 {% endblock %}
