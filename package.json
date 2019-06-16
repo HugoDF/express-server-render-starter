@@ -14,7 +14,9 @@
     "dev": "nodemon ./bin/start.js",
     "tw": "tailwind build src/styles/app.css -o public/app.css",
     "purge": "purgecss -c purgecss.config.js -o ./public",
-    "build": "yarn tw && yarn purge"
+    "build": "yarn tw && yarn purge",
+    "migrate": "node ./bin/migrate.js",
+    "migrate:create": "migrate create --migrations-dir='./src/migrations'"
   },
   "keywords": [
     "express",
@@ -25,11 +27,16 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.1",
+    "bcrypt": "^3.0.6",
     "client-sessions": "^0.8.0",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
+    "migrate": "^1.6.2",
     "morgan": "^1.9.1",
-    "nunjucks": "^3.2.0"
+    "nunjucks": "^3.2.0",
+    "pg": "^7.11.0",
+    "sql-template-strings": "^2.2.2",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.11",
