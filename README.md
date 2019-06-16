@@ -1,6 +1,6 @@
-# Express Nunjucks TailwindCSS 
+# Express Server-Render Starter
 
-> A starter project with Express, Nunjucks and TailwindCSS
+> A starter project for server-rendered Express applications using Nunjucks, TailwindCSS and Postgres
 
 ## Setup
 

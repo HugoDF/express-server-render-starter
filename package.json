@@ -1,8 +1,8 @@
 {
-  "name": "express-nunjucks-tailwind",
+  "name": "express-server-render-starter",
   "private": true,
   "version": "1.0.0",
-  "description": "A starter project with Express, Nunjucks and TailwindCSS",
+  "description": "A starter project for server-rendered Express applications using Nunjucks, TailwindCSS and Postgres",
   "main": "bin/start.js",
   "scripts": {
     "test": "xo",
