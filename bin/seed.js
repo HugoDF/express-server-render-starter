@@ -1,7 +1,7 @@
 const User = require('../src/modules/users');
 
 async function run() {
-  await User.create('hugo@boss.com', 'password');
+  await User.create('user@example.com', 'password');
   console.log('Added users');
 }
 
