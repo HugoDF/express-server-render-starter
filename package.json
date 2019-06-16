@@ -8,7 +8,7 @@
     "test": "xo",
     "lint": "xo",
     "format": "xo --fix",
-    "prestart": "yarn build",
+    "//prestart": "yarn build",
     "start": "node ./bin/start.js",
     "predev": "yarn tw",
     "dev": "nodemon ./bin/start.js",
