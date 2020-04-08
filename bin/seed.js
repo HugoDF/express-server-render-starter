@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/no-process-exit */
 const User = require('../src/modules/users');
 
 async function run() {

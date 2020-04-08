@@ -20,9 +20,9 @@ module.exports = {
       req.session.sessionId = sessionId;
 
       return res.redirect('/dashboard');
-    } catch (e) {
-      console.error(`POST /login >> Error: ${e.stack}`)
-      return res.status(500).render('500.html', { message: e.toString() })
+    } catch (error) {
+      console.error(`POST /login >> Error: ${error.stack}`);
+      return res.status(500).render('500.html', {message: error.toString()});
     }
   }
 };
