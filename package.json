@@ -34,7 +34,7 @@
     "helmet": "^3.22.0",
     "migrate": "^1.6.2",
     "morgan": "^1.9.1",
-    "nunjucks": "^3.2.0",
+    "nunjucks": "^3.2.1",
     "pg": "^8.0.0",
     "sql-template-strings": "^2.2.2",
     "uuid": "^3.3.2"
