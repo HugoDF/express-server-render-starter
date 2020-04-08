@@ -13,8 +13,8 @@ module.exports = async function(req, res) {
     }
 
     return res.render('dashboard.html', {userId: session.userId});
-  } catch (e) {
-    console.error(`dashboard >> Error: ${e.stack}`)
-    return res.status(500).render('500.html', { message: e.toString() })
+  } catch (error) {
+    console.error(`dashboard >> Error: ${error.stack}`);
+    return res.status(500).render('500.html', {message: error.toString()});
   }
 };
