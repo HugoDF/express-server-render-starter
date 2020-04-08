@@ -37,7 +37,7 @@
     "nunjucks": "^3.2.1",
     "pg": "^8.0.0",
     "sql-template-strings": "^2.2.2",
-    "uuid": "^3.3.2"
+    "uuid": "^7.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
