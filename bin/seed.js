@@ -8,7 +8,7 @@ async function run() {
 
 run()
   .then(() => process.exit(0))
-  .catch(error => {
+  .catch((error) => {
     console.error(error.stack);
     process.exit(1);
   });
