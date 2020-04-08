@@ -1,28 +1,36 @@
 const auth = require('../modules/authentication');
 
 module.exports = {
-  async get(req, res) {
-    return res.render('login.html');
+  async get(request, response) {
+    return response.render('login.html');
   },
-  async post(req, res) {
+  async post(request, response) {
     try {
-      const {email, password} = req.body;
+      const {email, password} = request.body;
       if (!email || !password) {
-        return res.render('login.html', {error: true, form: {email, password}});
+        return response.render('login.html', {
+          error: true,
+          form: {email, password}
+        });
       }
 
       const sessionId = await auth.createSession(email, password);
 
       if (!sessionId) {
-        return res.render('login.html', {error: true, form: {email, password}});
+        return response.render('login.html', {
+          error: true,
+          form: {email, password}
+        });
       }
 
-      req.session.sessionId = sessionId;
+      request.session.sessionId = sessionId;
 
-      return res.redirect('/dashboard');
+      return response.redirect('/dashboard');
     } catch (error) {
       console.error(`POST /login >> Error: ${error.stack}`);
-      return res.status(500).render('500.html', {message: error.toString()});
+      return response
+        .status(500)
+        .render('500.html', {message: error.toString()});
     }
   }
 };

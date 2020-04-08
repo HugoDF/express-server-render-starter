@@ -10,8 +10,8 @@ router.get('/dashboard', pages.dashboard);
 
 router.get('/login', login.get);
 router.post('/login', login.post);
-router.use((req, res) => {
-  return res.status(404).render('404.html');
+router.use((request, response) => {
+  return response.status(404).render('404.html');
 });
 
 module.exports = router;
