@@ -40,7 +40,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.10",
+    "nodemon": "^2.0.12",
     "purgecss": "^4.0.3",
     "tailwindcss": "^1.9",
     "xo": "^0.36.1"
