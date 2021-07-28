@@ -35,7 +35,7 @@
     "migrate": "^1.7.0",
     "morgan": "^1.10.0",
     "nunjucks": "^3.2.3",
-    "pg": "^8.6.0",
+    "pg": "^8.7.1",
     "sql-template-strings": "^2.2.2",
     "uuid": "^8.3.2"
   },
